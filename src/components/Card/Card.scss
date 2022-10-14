@@ -1,0 +1,95 @@
+.card {
+  background: #d9dfe9;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 6px;
+  animation: growin 0.1s;
+  vertical-align: top;
+  width: 300px;
+
+  &:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    outline: none;
+    background: none;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    border-radius: 5px;
+    color: #2c3e50;
+
+    &--active {
+      background: #fff;
+      box-shadow: 0px 2px 12px rgb(187, 187, 187);
+    }
+  }
+
+  &__delete {
+    margin: 20px auto 0;
+    display: block;
+    cursor: pointer;
+    color: #c0392b;
+    border: none;
+    font-size: 15px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #c0392b;
+    transition: all 0.3s;
+    color: #fff;
+
+    &:not(:disabled):hover {
+      background: #e74c3c;
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+  }
+
+  &__add {
+    &-wrapper {
+      display: flex;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    &-input {
+      width: 100%;
+      margin-right: 10px;
+      background: none;
+      border: 0;
+      border-bottom: 2px solid #86defc;
+      outline: none;
+      transition: all 0.3s;
+      padding: 10px 0;
+      font-size: 14px;
+      color: #000;
+
+      &:focus {
+        border-bottom: 2px solid #35cbfd;
+      }
+    }
+
+    &-button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 22px;
+      font-weight: bold;
+      color: #2c3e50;
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.board {
+  padding: 20px;
+  white-space: nowrap;
+
+  &__add-button {
+    background: #05b4ee;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 28px;
+    transition: background-color 0.3s;
+    margin-left: 25px;
+    border: none;
+    animation: growin 0.3s;
+    margin-top: 20px;
+    margin-right: 50px;
+
+    &:hover {
+      background: #35cbfd;
+      cursor: pointer;
+    }
+  }
+}
