@@ -39,7 +39,7 @@
     background: #ecf0f1;
     border: 1px solid #bdc3c7;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 8px 10px;
     transition: all 0.3s;
 
     &:first-of-type {
@@ -49,5 +49,59 @@
     &:hover {
       opacity: 0.8;
     }
+  }
+  &__detail-modal,
+  &__overlay {
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+
+  &__overlay {
+    background: rgba(49, 49, 49, 0.8);
+  }
+
+  &__modal-content {
+    position: absolute;
+    top: 22%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 400px;
+
+    textarea {
+      width: 400px;
+      height: 100px;
+      min-height: 50px;
+      min-width: 250px;
+      max-width: 400px;
+      max-height: 200px;
+    }
+  }
+  &__modal-btn-save {
+    position: absolute;
+    top: 30px;
+    right: 90px;
+    padding: 5px 7px;
+  }
+  &__modal-btn-close {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    padding: 5px 7px;
+  }
+  &__modal-btn-attachment {
+    position: absolute;
+    top: 30px;
+    right: 150px;
+    padding: 5px 7px;
   }
 }

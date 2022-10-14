@@ -4,7 +4,8 @@ import "./Board.scss";
 import { generateID } from "../../utils";
 
 export default function Board() {
-  const [cards, setCards] = useState([
+  const cardInfo = JSON.parse(localStorage.getItem("cardDetails"));
+  const defaultCardData = [
     {
       id: generateID(),
       title: "TO - DO",
@@ -14,12 +15,14 @@ export default function Board() {
       id: generateID(),
       title: "IN PROGRESS",
       tasks: [],
-    },{
+    },
+    {
       id: generateID(),
       title: "DONE",
       tasks: [],
-    }    
-  ]);
+    },
+  ];
+  const [cards, setCards] = useState(cardInfo ?? defaultCardData);
 
   const addCard = () => {
     setCards([
@@ -44,6 +47,7 @@ export default function Board() {
     const newCards = [...cards];
     newCards[index] = details;
     setCards(newCards);
+    localStorage.setItem("cardDetails", JSON.stringify(newCards));
   };
 
   const handleDrop = (e, currentCardIndex) => {
@@ -61,6 +65,7 @@ export default function Board() {
     newCards[sourceCardIndex].tasks.splice(sourceTaskIndex, 1);
 
     setCards(newCards);
+    localStorage.setItem("cardDetails", JSON.stringify(newCards));
   };
 
   return (
