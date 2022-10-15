@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Task from "../Task/Task";
 import "./Card.scss";
 import { generateID } from "../../utils";
-import TaskDetail from "../Task/Task-Detail";
+import TaskDetail from "../Task/Task-Detail/Task-Detail";
 
 export default function Card(props) {
   const { details } = props;
@@ -145,7 +145,6 @@ export default function Card(props) {
             task={selectedTask}
             OnModalSave={handleOnSaveModal}
             OnModalClose={(e) => {
-              console.log("E", e);
               setShowDetailModal(e);
             }}
           />
